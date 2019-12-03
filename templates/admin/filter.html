@@ -1,0 +1,18 @@
+{% load i18n %}
+<h3>{% blocktrans with filter_title=title %} {{ filter_title }} {% endblocktrans %}</h3>
+<ul>
+{% for choice in choices %}
+    <li{% if choice.selected %} class="selected"{% endif %}>
+    <a href="{{ choice.query_string|iriencode }}" title="{{ choice.display }}">
+        {% if choice.display == 'Yes' %}
+            Healthy
+        {% elif choice.display == 'No' %}
+            Unhealthy
+        {% elif choice.display == 'Unknown' %}
+            Not Connected
+        {% else %}
+            {{ choice.display }}
+        {% endif %}
+    </a></li>
+{% endfor %}
+</ul>

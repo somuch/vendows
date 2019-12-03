@@ -1,0 +1,23 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Mingus site admin' %}{% endblock %}
+
+{% block extrastyle %}
+<style>
+#header{ background-color: #3a4953; border-bottom: solid 1px #999; }
+#branding h1{ color: #fff; }
+.module h2, .module caption, .inline-group h2 { background:#ccc url(/admin_media/img/admin/nav-bg.gif) bottom left repeat-x; color: #333940; }
+a.section:link, a.section:visited { color: #666666; }
+#result_list td {padding-left: 10px;}
+#result_list th {font-size: 14px;}
+div.breadcrumbs a { font-size: 16px; margin-right: 10px;}
+#changelist-filter h2 {background: #27db58;}
+</style>
+{% endblock %}
+
+{% block branding %}
+<img style="border:0px solid #ddd;border-radius:0px; padding: 5px;width:130px;" src="https://d30fzr2520l6g5.cloudfront.net/corp-images-optimised/homepage/vend-tag-logo.svg" alt="Vend HQ">  <h1 id="site-name" > </h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -15,3 +15,6 @@ class EcommIntegration(models.Model):
     woocommerce_status = models.BooleanField(default=None, null=True, blank=True)
     shopify_status = models.BooleanField(default=None, null=True, blank=True)
     update_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.retailer_name

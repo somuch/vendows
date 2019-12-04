@@ -4,14 +4,27 @@
 {% for choice in choices %}
     <li{% if choice.selected %} class="selected"{% endif %}>
     <a href="{{ choice.query_string|iriencode }}" title="{{ choice.display }}">
-        {% if choice.display == 'Yes' %}
-            Healthy
-        {% elif choice.display == 'No' %}
-            Unhealthy
-        {% elif choice.display == 'Unknown' %}
-            Not Connected
+        {% if title == 'RETAILER STATUS' %}
+            {% if choice.display == 'Yes' %}
+                Active Retailers
+            {% elif choice.display == 'No' %}
+                Inactive Retailers
+            {% else %}
+                {{ choice.display }}
+            {% endif %}
         {% else %}
-            {{ choice.display }}
+            {% if choice.display == 'Yes' %}
+                Healthy Connection
+                <img src='/static/admin/img/icon-questionmark.svg'/>
+            {% elif choice.display == 'No' %}
+                Unhealthy Connection
+                <img src='/static/admin/img/icon-questionmark.svg'/>
+            {% elif choice.display == 'Unknown' %}
+                Not Connected
+                <img src='/static/admin/img/icon-questionmark.svg'/>
+            {% else %}
+                {{ choice.display }}
+            {% endif %}
         {% endif %}
     </a></li>
 {% endfor %}

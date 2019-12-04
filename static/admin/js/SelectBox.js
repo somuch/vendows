@@ -26,7 +26,12 @@
                 if (node.displayed) {
                     var new_option = new Option(node.text, node.value, false, false);
                     // Shows a tooltip when hovering over the option
-                    new_option.setAttribute("title", node.text);
+                    if (node.text == 'Yes') {
+                        node_text = 'aaaa' 
+                    } else {
+                        node_text = 'bbbb'
+                    }
+                    new_option.setAttribute("title", node_text);
                     new_options += new_option.outerHTML;
                 }
             }

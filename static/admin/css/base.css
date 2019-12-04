@@ -252,7 +252,8 @@ td, th {
     border-bottom: 1px solid #eee;
     vertical-align: top;
     padding: 8px;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    /* font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif; */
+    
 }
 
 th {
@@ -650,7 +651,7 @@ div.breadcrumbs {
     padding: 12px 40px;
     border: none;
     font-size: 14px;
-    color: #263d2b;
+    color: #fff;
     text-align: left;
 }
 
@@ -660,6 +661,8 @@ div.breadcrumbs a {
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
     color: #c4dce8;
+    margin-left:10px;
+
 }
 
 /* ACTION ICONS */

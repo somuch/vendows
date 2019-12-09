@@ -4,16 +4,16 @@ from django.db import models
 
 class EcommIntegration(models.Model):
     STATUS_CHOICES = [
-        (True, True),
-        (False, False),
-        (None, None),
+        (True, 'Healthy Connection'),
+        (False, 'Unhealthy Connection'),
+        (None, 'No Connection'),
     ]
     retailer_name = models.CharField(max_length=100)
     retailer_id = models.CharField(max_length=150)
     retailer_status = models.BooleanField(default=True)
-    bigcommerce_status = models.BooleanField(default=None, null=True, blank=True)
-    woocommerce_status = models.BooleanField(default=None, null=True, blank=True)
-    shopify_status = models.BooleanField(default=None, null=True, blank=True)
+    bigcommerce_status = models.BooleanField(default=None, null=True, blank=True, choices=STATUS_CHOICES)
+    woocommerce_status = models.BooleanField(default=None, null=True, blank=True, choices=STATUS_CHOICES)
+    shopify_status = models.BooleanField(default=None, null=True, blank=True, choices=STATUS_CHOICES)
     update_at = models.DateTimeField()
 
     def __str__(self):

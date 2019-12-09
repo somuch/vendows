@@ -144,6 +144,8 @@
     font-size: 14px;
     padding: 0 15px;
     margin-bottom: 10px;
+    background-color: #41af4b;
+    color: #fff;
 }
 
 #changelist-filter ul {
